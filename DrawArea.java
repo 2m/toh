@@ -38,7 +38,7 @@ public class DrawArea extends Canvas {
         Dimension d = getSize();
         offScreen = createImage(d.width, d.height);
 
-        this.setBackground(Color.white);
+        //this.setBackground(Color.white);
     }
 
     /**
