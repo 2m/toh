@@ -1,0 +1,23 @@
+Towers of Hanoi puzzle solver
+by Martynas Mickevičius 2010
+
+### INFO ###
+
+This program written in JAVA solved the Towers of Hanoi puzzle
+using two different algorithms.
+
+When using the recursive algorithm every level of the recursive
+function call is shown. This makes it easy to follow along and
+to understand how recursive algorithm works.
+
+Iterative solution moves disks around in CW ir CCW direction.
+
+Interface is is lithuanian language, but source code and comments
+are in english.
+
+### BUILDING AND RUNNING ###
+
+Execute build.bat to build and run.bat to run the program.
+
+You can also execute makejar.bat to archive all the class
+files to one jar archive.
