@@ -18,7 +18,7 @@ public class RecursiveSolution implements ISolution {
 
         actions = new Stack<IPaintable>();
 
-        TowersOfHanoi.setCaption("Rekursyvus sprendimas. Atvaizduojamas kiekvienas pagrindinës funkcijos iðkvietimas.");
+        TowersOfHanoi.setCaption("Rekursyvus sprendimas. Atvaizduojamas kiekvienas pagrindinÄ—s funkcijos iÅ¡kvietimas.");
     }
 
     public void start() {

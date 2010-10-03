@@ -48,7 +48,7 @@ public class Cycle implements IPaintable {
             // upper arrow side
             g.drawLine(arrowX, arrowY, arrowX + 10, arrowY - 20);
 
-            text = "Diskø skaièius lyginis - diskai perkeliami pagal laikrodşio rodyklæ.";
+            text = "DiskÅ³ skaiÄius lyginis - diskai perkeliami pagal laikrodÅ¾io rodyklÄ™.";
         }
         else { // counter-clockwise
             // get the points by the ellipsis equation
@@ -61,7 +61,7 @@ public class Cycle implements IPaintable {
             g.drawLine(arrowX, arrowY, arrowX - 10, arrowY - 20);
             g.drawLine(arrowX, arrowY, arrowX - 10, arrowY - 20);
 
-            text = "Diskø skaièius nelyginis - diskai perkeliami prieğ laikrodşio rodyklæ.";
+            text = "DiskÅ³ skaiÄius nelyginis - diskai perkeliami prieÅ¡ laikrodÅ¾io rodyklÄ™.";
         }
 
         //g.drawString(text, centerX - Peg.width*2, centerY + Peg.height*2 + 10);

@@ -1,1 +1,1 @@
-java TowersOfHanoi
+java -cp bin TowersOfHanoi

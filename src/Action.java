@@ -98,9 +98,9 @@ public class Action implements IPaintable
 
     public String getLitEndingFor(int num) {
         if (num % 10 == 1 && num % 100 != 11)
-            return "à";
+            return "Ä…";
         else if (num % 10 == 0 || (num % 100 >= 11 && num % 100 <= 19))
-            return "ø";
+            return "Å³";
         else
             return "us";
     }

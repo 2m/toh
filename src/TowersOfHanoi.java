@@ -97,7 +97,7 @@ public class TowersOfHanoi extends JPanel
         }
 
         JPanel p = new JPanel();
-        caption = new JLabel("Caption is right here");
+        caption = new JLabel("");
         caption.setFont(caption.getFont().deriveFont(Font.BOLD, 16));
         p.add(caption);
         pane.add(p, BorderLayout.PAGE_START);
@@ -121,7 +121,7 @@ public class TowersOfHanoi extends JPanel
         // this is needed because combo box selections are not displayed over the draw area sometimes
         p.setBorder(BorderFactory.createEmptyBorder(25, 0, 0, 0));
 
-        step = new JButton("Vienas ˛ingsnis");
+        step = new JButton("Vienas ≈æingsnis");
         step.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 doStep = true;
@@ -131,7 +131,7 @@ public class TowersOfHanoi extends JPanel
 
         final JTextField interval = new JTextField("2", 3);
 
-        cont = new JButton("TÊsti");
+        cont = new JButton("Tƒôsti");
         cont.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 if (!doContinue) {
@@ -147,11 +147,11 @@ public class TowersOfHanoi extends JPanel
                         step.setEnabled(false);
                     }
                     catch (Exception ex) {
-                        JOptionPane.showMessageDialog(frame, "ﬁingsnio intervalas turi b˚ti didesnis arba lygus nuliui.", "Netinkamas ˛ingsnio intervalas", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(frame, "≈Ωingsnio intervalas turi b≈´ti didesnis arba lygus nuliui.", "Netinkamas ≈æingsnio intervalas", JOptionPane.ERROR_MESSAGE);
                     }
                 }
                 else {
-                    ((JButton)ae.getSource()).setText("TÊsti");
+                    ((JButton)ae.getSource()).setText("Tƒôsti");
                     interval.setEnabled(true);
                     step.setEnabled(true);
                     doContinue = !doContinue;
@@ -160,7 +160,7 @@ public class TowersOfHanoi extends JPanel
         });
         p.add(cont);
 
-        p.add(new JLabel("ﬁingsnis kas:"));
+        p.add(new JLabel("≈Ωingsnis kas:"));
         p.add(interval);
         p.add(new JLabel("s."));
 
@@ -168,7 +168,7 @@ public class TowersOfHanoi extends JPanel
         String[] algoTypes = { "Rekursyviai", "Iteraityviai"};
         final JComboBox algoList = new JComboBox(algoTypes);
 
-        JButton reset = new JButton("I naujo");
+        JButton reset = new JButton("I≈° naujo");
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 try {
@@ -181,7 +181,7 @@ public class TowersOfHanoi extends JPanel
                     currentSolutionType = algoList.getSelectedIndex();
 
                     doContinue = false;
-                    cont.setText("TÊsti");
+                    cont.setText("Tƒôsti");
                     step.setEnabled(true);
                     cont.setEnabled(true);
                     interval.setEnabled(true);
@@ -190,7 +190,7 @@ public class TowersOfHanoi extends JPanel
                     logArea.setText("Atlikti veiksmai:\n");
                 }
                 catch (Exception ex) {
-                    JOptionPane.showMessageDialog(frame, "Disk¯ skaiËius turi b˚ti tarp 0 ir 100.", "Netinkamas disk¯ skaiËius", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(frame, "Disk≈≥ skaiƒçius turi b≈´ti tarp 0 ir 100.", "Netinkamas disk≈≥ skaiƒçius", JOptionPane.ERROR_MESSAGE);
                 }
             }
         });
@@ -198,10 +198,10 @@ public class TowersOfHanoi extends JPanel
 
         p.add(algoList);
 
-        p.add(new JLabel("Pradinis disk¯ skaiËius:"));
+        p.add(new JLabel("Pradinis disk≈≥ skaiƒçius:"));
         p.add(diskNumber);
 
-        done = new JLabel("IsprÊsta");
+        done = new JLabel("I≈°sprƒôsta");
         done.setOpaque(true);
         done.setBackground(new Color(0,255,0));
         done.setVisible(false);

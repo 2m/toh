@@ -1,2 +1,1 @@
-javac *.java
-jar cvfm TowersOfHanoi.jar manifest *.class
+javac -encoding UTF8 -d bin src\*.java
