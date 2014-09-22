@@ -1,8 +1,12 @@
+package org.m2;
+
+import java.util.ResourceBundle;
 import java.util.Stack;
 import java.util.EmptyStackException;
 
 public class IterativeSolution implements ISolution {
 
+    ResourceBundle messages = ResourceBundle.getBundle("toh");
     public static Stack<IPaintable> pegs;
 
     private Peg x;
@@ -39,7 +43,7 @@ public class IterativeSolution implements ISolution {
                 if (x.disks.empty() && z.disks.empty()) {
                     TowersOfHanoi.solved = true;
                     String execTime = TowersOfHanoi.getExecTime();
-                    TowersOfHanoi.addLog(String.format("Sprendimas baigtas per %s.\n", execTime), true);
+                    TowersOfHanoi.addLog(String.format(messages.getString("solution.completed"), execTime), true);
                 }
             }
         }
@@ -54,7 +58,7 @@ public class IterativeSolution implements ISolution {
                 if (x.disks.empty() && z.disks.empty()) {
                     TowersOfHanoi.solved = true;
                     String execTime = TowersOfHanoi.getExecTime();
-                    TowersOfHanoi.addLog(String.format("Sprendimas baigtas per %s.\n", execTime), true);
+                    TowersOfHanoi.addLog(String.format(messages.getString("solution.completed"), execTime), true);
                 }
                 if (!TowersOfHanoi.repaintAndWait()) {return;}
 
@@ -74,8 +78,8 @@ public class IterativeSolution implements ISolution {
      *   - smaller disk on the bigger disk
      *   - any disk on the empty peg
      *
-     * @param Peg a first peg
-     * @param Peg b second peg
+     * @param a first peg
+     * @param b second peg
      */
     public void legalMove(Peg a, Peg b) {
         int diskOnA;
@@ -101,12 +105,12 @@ public class IterativeSolution implements ISolution {
 
         if (diskOnA > diskOnB) {
             // move disk from a to b
-            TowersOfHanoi.addLog(String.format("%4d. Perkeliamas %d diskas nuo %s ant %s\n", TowersOfHanoi.moveCount, a.getTopDiskNo(), a.name, b.name));
+            TowersOfHanoi.addLog(String.format(messages.getString("transferred.from.disk"), TowersOfHanoi.moveCount, a.getTopDiskNo(), a.name, b.name));
             b.disks.push(a.disks.pop());
         }
         else {
             // move disk from b to a
-            TowersOfHanoi.addLog(String.format("%4d. Perkeliamas %d diskas nuo %s ant %s\n", TowersOfHanoi.moveCount, b.getTopDiskNo(), b.name, a.name));
+            TowersOfHanoi.addLog(String.format(messages.getString("transferred.from.disk"), TowersOfHanoi.moveCount, b.getTopDiskNo(), b.name, a.name));
             a.disks.push(b.disks.pop());
         }
     }

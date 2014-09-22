@@ -1,7 +1,11 @@
+package org.m2;
+
+import java.util.ResourceBundle;
 import java.util.Stack;
 
 public class RecursiveSolution implements ISolution {
 
+    ResourceBundle messages = ResourceBundle.getBundle("toh");
     public static Stack<IPaintable> actions;
 
     private Peg x;
@@ -18,7 +22,8 @@ public class RecursiveSolution implements ISolution {
 
         actions = new Stack<IPaintable>();
 
-        TowersOfHanoi.setCaption("Rekursyvus sprendimas. Atvaizduojamas kiekvienas pagrindinės funkcijos iškvietimas.");
+        String caption = messages.getString("recursive.solution");
+        TowersOfHanoi.setCaption(caption);
     }
 
     public void start() {
@@ -29,7 +34,7 @@ public class RecursiveSolution implements ISolution {
         if (recursive(x, y, z, diskCount)) {
             TowersOfHanoi.solved = true;
             String execTime = TowersOfHanoi.getExecTime();
-            TowersOfHanoi.addLog(String.format("Sprendimas baigtas per %s.\n", execTime), true);
+            TowersOfHanoi.addLog(String.format(messages.getString("solution.completed"), execTime), true);
         }
 
         if (!TowersOfHanoi.repaintAndWait()) {return;}
@@ -62,7 +67,7 @@ public class RecursiveSolution implements ISolution {
             TowersOfHanoi.moveCount++;
 
             // move top disk from x to y
-            TowersOfHanoi.addLog(String.format("%4d. Perkeliamas %d diskas nuo %s ant %s\n", TowersOfHanoi.moveCount, x.getTopDiskNo(), x.name, y.name));
+            TowersOfHanoi.addLog(String.format(messages.getString("transferred.from.disk"), TowersOfHanoi.moveCount, x.getTopDiskNo(), x.name, y.name));
             y.disks.push(x.disks.pop());
 
             if (!TowersOfHanoi.repaintAndWait()) {return false;}

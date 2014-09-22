@@ -1,8 +1,12 @@
+package org.m2;
+
 import java.awt.Graphics;
 import java.awt.Color;
+import java.util.ResourceBundle;
 
 public class Cycle implements IPaintable {
 
+    ResourceBundle messages = ResourceBundle.getBundle("toh");
     public Peg x;
     public Peg y;
     public Peg z;
@@ -48,7 +52,7 @@ public class Cycle implements IPaintable {
             // upper arrow side
             g.drawLine(arrowX, arrowY, arrowX + 10, arrowY - 20);
 
-            text = "Diskų skaičius lyginis - diskai perkeliami pagal laikrodžio rodyklę.";
+            text = messages.getString("disk.moved.counterclockwise.direction");
         }
         else { // counter-clockwise
             // get the points by the ellipsis equation
@@ -61,11 +65,11 @@ public class Cycle implements IPaintable {
             g.drawLine(arrowX, arrowY, arrowX - 10, arrowY - 20);
             g.drawLine(arrowX, arrowY, arrowX - 10, arrowY - 20);
 
-            text = "Diskų skaičius nelyginis - diskai perkeliami prieš laikrodžio rodyklę.";
+            text = messages.getString("disk.moved.in.clockwise.direction");
         }
 
         //g.drawString(text, centerX - Peg.width*2, centerY + Peg.height*2 + 10);
-        TowersOfHanoi.setCaption("Iteratyvus sprendimas. "+text);
+        TowersOfHanoi.setCaption(messages.getString("iterative.solution") +text);
 
         x.paintComponent(g);
         y.paintComponent(g);

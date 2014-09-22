@@ -1,3 +1,5 @@
+package org.m2;
+
 import java.awt.*;
 import java.awt.event.*;
 import java.awt.geom.AffineTransform;
@@ -59,17 +61,14 @@ public class ZoomAndPanListener implements MouseListener, MouseMotionListener, M
     }
 
     public void mouseDragged(MouseEvent e) {
-        //System.out.println("============= mouseDragged ============");
         moveCamera(e);
     }
 
     public void mouseWheelMoved(MouseWheelEvent e) {
-        //System.out.println("============= Zoom camera ============");
         zoomCamera(e);
     }
 
     private void moveCamera(MouseEvent e) {
-        //System.out.println("============= Move camera ============");
         try {
             dragEndScreen = e.getPoint();
             Point2D.Float dragStart = transformPoint(dragStartScreen);
@@ -117,36 +116,12 @@ public class ZoomAndPanListener implements MouseListener, MouseMotionListener, M
     }
 
     private Point2D.Float transformPoint(Point p1) throws NoninvertibleTransformException {
-//        System.out.println("Model -> Screen Transformation:");
-//        showMatrix(coordTransform);
         AffineTransform inverse = coordTransform.createInverse();
-//        System.out.println("Screen -> Model Transformation:");
-//        showMatrix(inverse);
 
         Point2D.Float p2 = new Point2D.Float();
         inverse.transform(p1, p2);
         return p2;
     }
-
-    private void showMatrix(AffineTransform at) {
-        double[] matrix = new double[6];
-        at.getMatrix(matrix);  // { m00 m10 m01 m11 m02 m12 }
-        int[] loRow = {0, 0, 1};
-        for (int i = 0; i < 2; i++) {
-            System.out.print("[ ");
-            for (int j = i; j < matrix.length; j += 2) {
-                System.out.printf("%5.1f ", matrix[j]);
-            }
-            System.out.print("]\n");
-        }
-        System.out.print("[ ");
-        for (int i = 0; i < loRow.length; i++) {
-            System.out.printf("%3d   ", loRow[i]);
-        }
-        System.out.print("]\n");
-        System.out.println("---------------------");
-    }
-
 
     public int getZoomLevel() {
         return zoomLevel;

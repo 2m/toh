@@ -1,4 +1,1 @@
-# compiled class files
-*.class
-# jar files
-*.jar
+target
