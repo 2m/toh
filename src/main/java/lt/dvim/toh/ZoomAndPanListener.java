@@ -1,4 +1,4 @@
-package org.m2;
+package lt.dvim.toh;
 
 import java.awt.*;
 import java.awt.event.*;

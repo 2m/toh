@@ -1,6 +1,4 @@
-Towers of Hanoi puzzle solver by Martynas Mickevičius 2010
-
-### Description
+# Towers of Hanoi puzzle solver
 
 The program written in JAVA solves the Towers of Hanoi puzzle
 using two different algorithms.
@@ -11,19 +9,22 @@ to understand how recursive algorithm works.
 
 Iterative solution moves disks around in CW or CCW direction.
 
-Interface is i18n in english, spanish and lithuanian.
+Interface is in English, Spanish and Lithuanian.
 
 ### Building and running
 
-Execute 
+Note that this application requires at least Java 9 because
+of the UTF8 encoding used in the resource bundle files.
+
+Launch with:
 
 ```bash
-$ mvn package
+$ mvn compile exec:java -Dexec.mainClass="lt.dvim.toh.TowersOfHanoi"
 ```
 
-Launch with 
+If you want to run the application in a different locale than
+your system default locale, prepend the command with:
 
 ```bash
-java -jar target/toh<version>.jar
+env LC_ALL=lt_LT.utf8
 ```
-
