@@ -1,5 +1,8 @@
+package org.m2;
+
 import java.awt.Graphics;
 
-interface IPaintable {
+public interface IPaintable {
+
     public void paintComponent(Graphics g);
 }

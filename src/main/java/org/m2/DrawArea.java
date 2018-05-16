@@ -1,3 +1,5 @@
+package org.m2;
+
 import java.awt.Canvas;
 import java.awt.Graphics;
 import java.awt.Graphics2D;
@@ -37,8 +39,6 @@ public class DrawArea extends Canvas {
 
         Dimension d = getSize();
         offScreen = createImage(d.width, d.height);
-
-        //this.setBackground(Color.white);
     }
 
     /**
@@ -49,8 +49,6 @@ public class DrawArea extends Canvas {
         paint(g);
     }
 
-    // use double buffer
-    // http://www.java2s.com/Code/Java/2D-Graphics-GUI/Smoothmoveusingdoublebuffer.htm
     public void paint(Graphics gr) {
         clearOffscreenAndReturn();
 
@@ -60,7 +58,6 @@ public class DrawArea extends Canvas {
         for (int i = 0; i < actions.size(); i++) {
             try {
                 actions.elementAt(i).paintComponent(g);
-                //System.out.println(String.format("Calling action paint x:%d, y:%d", actions.elementAt(i).centerX, actions.elementAt(i).centerY));
             }
             catch (ArrayIndexOutOfBoundsException ex) {
             }

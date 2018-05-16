@@ -1,19 +1,18 @@
-import java.awt.Color;
-import java.awt.Container;
-import java.awt.Graphics;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+package org.m2;
 
-import javax.swing.JFrame;
-import javax.swing.JPanel;
+import java.awt.Color;
+import java.awt.Graphics;
+import java.text.MessageFormat;
+import java.util.ResourceBundle;
 
 public class Action implements IPaintable
 {
+    ResourceBundle messages = ResourceBundle.getBundle("toh");
     public Peg x;
     public Peg y;
     public Peg z;
 
-    int centerX = 500;
+    int centerX = 200;
     int centerY = 100;
 
     int width;
@@ -68,10 +67,10 @@ public class Action implements IPaintable
 
         String text = null;
         if (diskNum != -1) {
-            text = String.format("hb(%s, %s, %s, %d) {nuo %s ant %s per %s, %d disk%s}", x.name, y.name, z.name, diskNum, x.name, y.name, z.name, diskNum, getLitEndingFor(diskNum));
+            text = MessageFormat.format(messages.getString("step.movement"), x.name, y.name, z.name, diskNum, getLitEndingFor(diskNum));
         }
         else {
-            text = String.format("%d. Perkeliama nuo %s ant %s.", TowersOfHanoi.moveCount, x.name, y.name);
+            text = String.format(messages.getString("moving.from"), TowersOfHanoi.moveCount, x.name, y.name);
         }
         g.drawString(text, centerX - width/2 + 5, centerY - height/2 + 15);
 

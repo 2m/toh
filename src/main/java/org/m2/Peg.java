@@ -1,3 +1,5 @@
+package org.m2;
+
 import java.awt.Color;
 import java.awt.Container;
 import java.awt.Graphics;
@@ -18,6 +20,7 @@ public class Peg implements IPaintable
 
     public static final int TOP_MARGIN = 10;
     public static final int SIDES_MARGIN = 20;
+    private static final String MD5 = "MD5";
 
     public Stack<Integer> disks;
     public String name;
@@ -81,7 +84,7 @@ public class Peg implements IPaintable
     {
         try {
             byte[] bytesOfMessage = String.valueOf(num).getBytes();
-            MessageDigest md = MessageDigest.getInstance("MD5");
+            MessageDigest md = MessageDigest.getInstance(MD5);
             byte[] d = md.digest(bytesOfMessage);
             return new Color((int)d[0] + 128, (int)d[1] + 128, (int)d[2] + 128);
         }
