@@ -1,4 +1,4 @@
-package org.m2;
+package lt.dvim.toh;
 
 import java.awt.Color;
 import java.awt.Graphics;
@@ -54,14 +54,10 @@ public class Action implements IPaintable
                     break;
             }
         }
-
-        //System.out.println(String.format("Creating action x:%d, y:%d", centerX, centerY));
     }
 
     public void paintComponent(Graphics g)
     {
-        //System.out.println(String.format("Action painted x:%d, y:%d", centerX, centerY));
-
         g.setColor(Color.black);
         g.drawRect(centerX - width/2, centerY - height/2, width, height);
 

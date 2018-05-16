@@ -1,4 +1,4 @@
-package org.m2;
+package lt.dvim.toh;
 
 import java.awt.Color;
 import java.awt.Container;
@@ -22,6 +22,11 @@ public class TowersOfHanoi extends JPanel
     public static int SLEEP_BETWEEN_STEPS = 2000;
 
     public static int diskCount = 3;
+
+    static {
+        System.out.println(System.getProperty("user.language"));
+        System.out.println(java.util.Locale.getDefault());
+    }
 
     public static Peg x = null;
     public static Peg y = null;
@@ -166,7 +171,7 @@ public class TowersOfHanoi extends JPanel
         String[] algoTypes = {messages.getString("recursively"), messages.getString("iteratively")};
         final JComboBox algoList = new JComboBox(algoTypes);
 
-        JButton reset = new JButton(messages.getString("New"));
+        JButton reset = new JButton(messages.getString("new"));
         reset.addActionListener(new ActionListener() {
             public void actionPerformed(ActionEvent ae) {
                 try {
